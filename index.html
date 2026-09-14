@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiaNel Lencería | Ropa Interior</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="top-bar">
+            <span>Los mejores precios y atención personalizada</span>
+        </div>
+        <nav class="navbar">
+            <a href="#" class="logo">DiaNel <span>Lencería</span></a>
+            <ul class="nav-links">
+                <li><a href="#coleccion">Colección</a></li>
+                <li><a href="#catalogo">Productos</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <div class="cart-icon-container" id="cart-btn">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span id="cart-count">0</span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- LOGO ANIMADO -->
+    <div class="logo-container">
+    <svg class="animated-svg" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <pattern id="luxMarble" width="600" height="600" patternUnits="userSpaceOnUse">
+                <rect width="600" height="600" fill="#F9F6F0"/>
+                <path d="M-100,50 Q200,80 400,300 T700,250" fill="none" stroke="#E5D9D0" stroke-width="8" opacity="0.7"/>
+                <path d="M50,-100 Q300,300 200,550 T600,700" fill="none" stroke="#EFE6DF" stroke-width="6" opacity="0.6"/>
+                <path d="M300,0 Q450,250 250,500 T50,600" fill="none" stroke="#DCD0C6" stroke-width="4" opacity="0.5"/>
+            </pattern>
+
+            <linearGradient id="goldLux" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#E6C687"/>
+                <stop offset="25%" stop-color="#FBF4D5"/>
+                <stop offset="50%" stop-color="#C59F4E"/>
+                <stop offset="75%" stop-color="#FFF0B6"/>
+                <stop offset="100%" stop-color="#9A722C"/>
+            </linearGradient>
+
+            <linearGradient id="lilaGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#E9D5FF"/>
+                <stop offset="40%" stop-color="#C084FC"/>
+                <stop offset="100%" stop-color="#7E22CE"/>
+            </linearGradient>
+
+            <filter id="luxuryShadow" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#581C87" flood-opacity="0.25"/>
+            </filter>
+            
+            <filter id="goldGlow" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="2" result="blur"/>
+                <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+            </filter>
+        </defs>
+
+        <rect width="600" height="600" fill="url(#luxMarble)" />
+
+        <!-- Marco Rectangular -->
+        <g class="gold-frame">
+            <rect x="40" y="40" width="520" height="520" rx="30" fill="none" stroke="url(#goldLux)" stroke-width="8" filter="url(#goldGlow)" />
+            <rect x="55" y="55" width="490" height="490" rx="20" fill="none" stroke="url(#goldLux)" stroke-width="2" opacity="0.8"/>
+            <g transform="translate(40, 40)">
+                <path d="M 0,-6 L 1.5, -1.5 L 6, 0 L 1.5, 1.5 L 0, 6 L -1.5, 1.5 L -6, 0 L -1.5, -1.5 Z" fill="#FFF" opacity="0.9"/>
+            </g>
+            <g transform="translate(560, 560)">
+                <path d="M 0,-6 L 1.5, -1.5 L 6, 0 L 1.5, 1.5 L 0, 6 L -1.5, 1.5 L -6, 0 L -1.5, -1.5 Z" fill="#FFF" opacity="0.9"/>
+            </g>
+        </g>
+
+        <!-- Percha Metalizada Dorada -->
+        <g class="hanger-group">
+            <g transform="translate(300, 165)">
+                <path d="M -1,-45 C -1,-60 18,-60 18,-40 C 18,-25 1,-20 1,-8" fill="none" stroke="url(#goldLux)" stroke-width="6" stroke-linecap="round" filter="url(#goldGlow)"/>
+                <path d="M -130,18 C -80,4 -25,-6 0,-6 C 25,-6 80,4 130,18 C 137,20 141,26 136,31 C 131,36 124,32 119,27 C 74,14 25,6 0,6 C -25,6 -74,14 -119,27 C -124,32 -131,36 -136,31 C -141,26 -137,20 -130,18 Z" fill="url(#goldLux)" filter="url(#luxuryShadow)"/>
+                <g transform="translate(-10, 8)">
+                    <rect x="-14" y="0" width="28" height="40" rx="4" fill="#FAFAFA" stroke="url(#goldLux)" stroke-width="3"/>
+                    <circle cx="0" cy="6" r="2.5" fill="url(#goldLux)"/>
+                </g>
+            </g>
+        </g>
+
+        <!-- Texto DiaNel -->
+        <g transform="translate(300, 350)" text-anchor="middle" font-family="'Playfair Display', 'Georgia', serif" font-size="78" font-weight="bold">
+            <text class="dia-text" x="-90" fill="#2D1B4E" filter="url(#luxuryShadow)">Dia</text>
+            <text class="nel-text" x="90" fill="url(#lilaGlow)" filter="url(#luxuryShadow)">Nel</text>
+        </g>
+
+        <!-- Lencería y Listón de Subrayado -->
+        <g class="footer-elements">
+            <text x="300" y="440" text-anchor="middle" font-family="'Georgia', serif" font-size="28" font-style="italic" font-weight="normal" fill="#4A3565" letter-spacing="2">Lencería</text>
+            <g transform="translate(300, 465)">
+                <path d="M -110,0 L -15,0 C -5,0 0,-3 5,0 L 110,0" fill="none" stroke="url(#goldLux)" stroke-width="3.5" stroke-linecap="round"/>
+                <circle cx="0" cy="0" r="4" fill="url(#goldLux)"/>
+            </g>
+        </g>
+    </svg>
+</div>
+
+    <!-- SECCIÓN DE CATEGORÍAS -->
+    <section class="categories" id="coleccion">
+        <h2 class="section-title">Nuestras Categorías</h2>
+        <div class="grid-categories">
+            <div class="category-card cat-1" onclick="filtrarCategoria('mujer')">
+                <div class="overlay">
+                    <h3>Mujeres</h3>
+                    <span class="cat-btn">Ver Productos</span>
+                </div>
+            </div>
+            <div class="category-card cat-2" onclick="filtrarCategoria('hombre')">
+                <div class="overlay">
+                    <h3>Hombres</h3>
+                    <span class="cat-btn">Ver Productos</span>
+                </div>
+            </div>
+            <div class="category-card cat-4" onclick="filtrarCategoria('juvenil')">
+                <div class="overlay">
+                    <h3>Juveniles</h3>
+                    <span class="cat-btn">Ver Productos</span>
+                </div>
+            </div>
+            <div class="category-card cat-3" onclick="filtrarCategoria('nino')">
+                <div class="overlay">
+                    <h3>Niños</h3>
+                    <span class="cat-btn">Ver Productos</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE PRODUCTOS Y FILTROS -->
+    <section class="products" id="catalogo">
+        <h2 class="section-title" id="titulo-catalogo">Catálogo de Productos</h2>
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filtrarCategoria('todos')">Todos</button>
+            <button class="filter-btn" onclick="filtrarCategoria('mujer')">Mujeres</button>
+            <button class="filter-btn" onclick="filtrarCategoria('hombre')">Hombres</button>
+            <button class="filter-btn" onclick="filtrarCategoria('nino')">Niños</button>
+        </div>
+        <div class="grid-products" id="grid-productos"></div>
+    </section>
+
+    <!-- CARRITO LATERAL DESPLEGABLE -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h3>Tu Carrito de Compras</h3>
+            <button class="close-cart" id="close-cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <p class="empty-cart-msg">Tu carrito está vacío</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">$0</span>
+            </div>
+            <button class="btn-checkout" id="btn-checkout">
+                <i class="fa-brands fa-whatsapp"></i> Enviar pedido por WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <a href="https://wa.me/543704282706?text=Hola!%20Quiero%20hacer%20una%20consulta" class="whatsapp-float" target="_blank" aria-label="Contacto WhatsApp">
+        <svg viewBox="0 0 32 32" class="whatsapp-icon">
+            <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 8.133-2.127c2.373 1.298 5.053 1.98 7.867 1.98 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.333c-2.457 0-4.871-0.655-6.993-1.897l-0.502-0.295-5.183 1.355 1.38-5.132-0.325-0.517c-1.362-2.173-2.083-4.685-2.083-7.247 0-7.362 5.972-13.333 13.333-13.333s13.333 5.972 13.333 13.333-5.972 13.333-13.333 13.333zM22.585 19.34c-0.36-0.18-2.128-1.050-2.458-1.17-0.33-0.12-0.57-0.18-0.81 0.18s-0.93 1.17-1.14 1.41c-0.21 0.24-0.42 0.27-0.78 0.09-0.36-0.18-1.52-0.56-2.895-1.787-1.070-0.954-1.793-2.132-2.003-2.492s-0.022-0.555 0.158-0.735c0.162-0.162 0.36-0.42 0.54-0.63 0.18-0.21 0.24-0.36 0.36-0.6 0.12-0.24 0.06-0.45-0.03-0.63s-0.81-1.95-1.11-2.67c-0.293-0.702-0.591-0.607-0.81-0.618-0.21-0.010-0.45-0.012-0.69-0.012s-0.63 0.09-0.96 0.45c-0.33 0.36-1.26 1.23-1.26 3 0 1.77 1.29 3.48 1.47 3.72s2.537 3.875 6.147 5.433c0.858 0.371 1.528 0.593 2.05 0.759 0.862 0.274 1.646 0.235 2.266 0.142 0.692-0.103 2.128-0.87 2.428-1.71 0.3-0.84 0.3-1.56 0.21-1.71-0.09-0.15-0.33-0.24-0.69-0.42z"></path>
+        </svg>
+    </a>
+
+    <footer class="footer" id="contacto">
+        <div class="footer-container">
+            <h2 class="footer-logo">DiaNel Lencería</h2>
+            <p class="motivational-quote">
+                "La verdadera belleza comienza en el momento en que decides amarte, cuidarte y vestirte para ti misma primero."
+            </p>
+            <div class="contact-box">
+                <p>¿Tienes dudas o quieres pedir tu talle ideal?</p>
+                <a href="https://wa.me/543704282706?text=Hola,%20vengo%20desde%20la%20página%20web%20y%20quiero%20hacer%20un%20pedido" target="_blank" class="btn-whatsapp-footer">
+                    <span>Contactar por WhatsApp</span>
+                    <strong>Olga Ayala</strong>
+                </a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DiaNel Lencería — Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
