@@ -1,3 +1,5 @@
+
+
 // Base de datos de productos organizada por categorías
 const productos = [
     {
@@ -375,7 +377,7 @@ const productos = [
         imagen: "imagenes/hombres/medias-varias.jpeg",
         
     },
-    {    id: 38,
+    {    id: 39,
         categoria: "hombre",
         nombre: "Bóxer Calvin Klein",
         descripcion: "Algodón peinado con elástico suave que no ajusta.",
@@ -391,7 +393,7 @@ const productos = [
 let carrito = [];
 
 // Elementos del DOM
-const gridProductos = document.getElementById("grid-productos");
+const gridProductos = document.getElementById("productsSlider");
 const cartBtn = document.getElementById("cart-btn");
 const cartDrawer = document.getElementById("cart-drawer");
 const cartOverlay = document.getElementById("cart-overlay");
@@ -427,7 +429,7 @@ function mostrarProductos(categoriaFiltro = "todos") {
 
         card.innerHTML = `
             ${prod.badge ? `<div class="badge">${prod.badge}</div>` : ''}
-            <div class="product-img" style="background-image: url('${prod.imagen}');"></div>
+            <div class="product-img" style="background-image: url('${prod.imagen}'); cursor: zoom-in;" onclick="abrirModalZoom(${prod.id})"></div>
             <div class="product-info">
                 <div>
                     <h3>${prod.nombre}</h3>
@@ -453,10 +455,11 @@ function mostrarProductos(categoriaFiltro = "todos") {
 window.filtrarCategoria = function(categoria) {
     mostrarProductos(categoria);
     
-    // Actualizar botones activos
+    // Actualizar botones activos de forma segura
     document.querySelectorAll(".filter-btn").forEach(btn => {
         btn.classList.remove("active");
-        if(btn.textContent.toLowerCase().includes(categoria) || (categoria === 'todos' && btn.textContent === 'Todos')) {
+        const onclickAttr = btn.getAttribute("onclick") || "";
+        if (onclickAttr.includes(`'${categoria}'`) || onclickAttr.includes(`"${categoria}"`)) {
             btn.classList.add("active");
         }
     });
@@ -578,4 +581,42 @@ btnCheckout.addEventListener("click", () => {
 // Inicializar cargando todos los productos al abrir la página
 document.addEventListener("DOMContentLoaded", () => {
     mostrarProductos("todos");
+});
+
+const prodPrevBtn = document.querySelector('.products .prev-btn');
+const prodNextBtn = document.querySelector('.products .next-btn');
+
+if (prodNextBtn && prodPrevBtn && gridProductos) {
+    prodNextBtn.addEventListener('click', () => {
+        gridProductos.scrollBy({ left: 320, behavior: 'smooth' });
+    });
+
+    prodPrevBtn.addEventListener('click', () => {
+        gridProductos.scrollBy({ left: -320, behavior: 'smooth' });
+    });
+}
+
+
+function abrirModalZoom(id) {
+    const producto = productos.find(p => p.id === id);
+    if (!producto) return;
+    
+    document.getElementById('imgZoom').src = producto.imagen;
+    document.getElementById('tituloZoom').textContent = producto.nombre;
+    document.getElementById('descZoom').textContent = producto.$precio;
+    document.getElementById('modalZoom').classList.add('activo');
+}
+
+function cerrarModalZoom() {
+    document.getElementById('modalZoom').classList.remove('activo');
+}
+
+// Eventos de cierre (botón X o hacer clic fuera del recuadro blanco)
+document.getElementById('cerrarModal').addEventListener('click', cerrarModalZoom);
+document.getElementById('modalZoom').addEventListener('click', (e) => {
+    if (e.target.id === 'modalZoom') cerrarModalZoom();
+});
+// Cierre con la tecla Escape
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') cerrarModalZoom();
 });

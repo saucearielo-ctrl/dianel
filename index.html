@@ -143,14 +143,29 @@
     <!-- SECCIÓN DE PRODUCTOS Y FILTROS -->
     <section class="products" id="catalogo">
         <h2 class="section-title" id="titulo-catalogo">Catálogo de Productos</h2>
-        <div class="filter-buttons">
-            <button class="filter-btn active" onclick="filtrarCategoria('todos')">Todos</button>
-            <button class="filter-btn" onclick="filtrarCategoria('mujer')">Mujeres</button>
-            <button class="filter-btn" onclick="filtrarCategoria('hombre')">Hombres</button>
-            <button class="filter-btn" onclick="filtrarCategoria('nino')">Niños</button>
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filtrarCategoria('todos')">Todos</button>
+                <button class="filter-btn" onclick="filtrarCategoria('mujer')">Mujeres</button>
+                <button class="filter-btn" onclick="filtrarCategoria('hombre')">Hombres</button>
+                <button class="filter-btn" onclick="filtrarCategoria('juvenil')">Juveniles</button>
+                <button class="filter-btn" onclick="filtrarCategoria('nino')">Niños</button>
+            </div>
+        <div class="slider-container" style="position: relative;">
+        <!-- Botón izquierdo (opcional para PC) -->
+            <button class="slider-btn prev-btn" aria-label="Anterior">&#10094;</button>
+
+        <!-- Pista deslizable (aquí es donde tu JavaScript inyecta las tarjetas) -->
+            <div class="grid-products" id="productsSlider">
+                <!-- Tu archivo JavaScript cargará las .product-card aquí dinámicamente -->
+            </div>
+
+        <!-- Botón derecho (opcional para PC) -->
+            <button class="slider-btn next-btn" aria-label="Siguiente">&#10095;</button>
         </div>
-        <div class="grid-products" id="grid-productos"></div>
-    </section>
+
+ 
+        
+    </section>  
 
     <!-- CARRITO LATERAL DESPLEGABLE -->
     <div class="cart-overlay" id="cart-overlay"></div>
@@ -199,6 +214,14 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+<script src="js/main.js" defer></script>
+<div id="modalZoom" class="modal-zoom">
+    <div class="modal-zoom-content">
+        <span id="cerrarModal" class="cerrar-modal">&times;</span>
+        <img id="imgZoom" src="" alt="Vista ampliada">
+        <h3 id="tituloZoom"></h3>
+        <p id="descZoom"></p>
+    </div>
+</div>
 </body>
 </html>

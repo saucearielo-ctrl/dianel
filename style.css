@@ -352,12 +352,20 @@ body {
 }
 
 .grid-products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex;
     gap: 30px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: auto;
+    padding: 20px 5px 40px 5px;
+    width: 100%;
+    scrollbar-width: none;
+    
 }
 
 .product-card {
+    
+    flex: 0 0 300px;
     background-color: var(--bg-card);
     border-radius: 6px;
     overflow: hidden;
@@ -366,6 +374,7 @@ body {
     transition: var(--transition);
     display: flex;
     flex-direction: column;
+    scroll-snap-align: start;
 }
 
 .product-card:hover {
@@ -388,7 +397,7 @@ body {
 }
 
 .product-img {
-    height: 50dvh;
+    height: 40dvh;
     background-size: cover;
     background-position: center;
     transition: var(--transition);
@@ -486,6 +495,48 @@ body {
     background-color: var(--accent-rose);
 }
 
+/* Contenedor general de la sección de productos */
+.slider-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos para las flechas laterales en la tienda */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    font-size: 1.1rem;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-dark, #333);
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.slider-btn:hover {
+    background-color: #F9F9F9;
+    transform: translateY(-50%) scale(1.05);
+}
+
+.prev-btn { left: -20px; }
+.next-btn { right: -20px; }
+
+/* En celulares se ocultan las flechas porque se desliza con el dedo */
+@media (max-width: 768px) {
+    .slider-btn { display: none; }
+}
 /* ==========================================================================
    CARRITO LATERAL (DRAWER)
    ========================================================================== */
@@ -755,4 +806,126 @@ body {
     .motivational-quote {
         font-size: 1.1rem;
     }
+}
+
+.modal-zoom {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+.modal-zoom.activo {
+    display: flex;
+}
+.modal-zoom-content {
+    background: #fff;
+    padding: 25px;
+    border-radius: 16px;
+    max-width: 480px;
+    width: 90%;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    animation: popIn 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+@keyframes popIn {
+    from { transform: scale(0.6); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+.modal-zoom-content img {
+    width: 100%;
+    max-height: 380px;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+.modal-zoom-content h3 {
+    margin-bottom: 8px;
+    color: #222;
+}
+.modal-zoom-content p {
+    color: #666;
+    font-size: 0.95rem;
+}
+.cerrar-modal {
+    position: absolute;
+    top: 12px; right: 18px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #888;
+    cursor: pointer;
+}
+.cerrar-modal:hover { color: #000; }
+
+/* Pequeño indicador visual en la imagen de la tarjeta */
+.card-product img {
+    cursor: zoom-in;
+    transition: transform 0.2s ease;
+}
+.card-product img:hover {
+    transform: scale(1.02);
+}
+
+.modal-zoom {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+.modal-zoom.activo {
+    display: flex;
+}
+.modal-zoom-content {
+    background: #fff;
+    padding: 25px;
+    border-radius: 16px;
+    max-width: 480px;
+    width: 90%;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    animation: popIn 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+@keyframes popIn {
+    from { transform: scale(0.6); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+.modal-zoom-content img {
+    width: 100%;
+    max-height: 380px;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+.modal-zoom-content h3 {
+    margin-bottom: 8px;
+    color: #222;
+}
+.modal-zoom-content p {
+    color: #666;
+    font-size: 0.95rem;
+}
+.cerrar-modal {
+    position: absolute;
+    top: 12px; right: 18px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #888;
+    cursor: pointer;
+}
+.cerrar-modal:hover { color: #000; }
+
+/* Pequeño indicador visual en la imagen de la tarjeta */
+.card-product img {
+    cursor: zoom-in;
+    transition: transform 0.2s ease;
+}
+.card-product img:hover {
+    transform: scale(1.02);
 }
