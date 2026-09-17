@@ -1,5 +1,4 @@
 
-
 // Base de datos de productos organizada por categorías
 const productos = [
     {
@@ -69,7 +68,7 @@ const productos = [
 
         id: 9,
         categoria: "nino",
-        nombre: "Bomchitas lisas nenas",
+        nombre: "Bombachitas lisas nenas",
         descripcion: "Algodón suave y costuras planas anti-rozaduras.",
         precio: 2500,
         talles: ["Hasta 4 años"],
@@ -210,7 +209,7 @@ const productos = [
     {
         id: 23,
         categoria: "mujer",
-        nombre: "Culotte les",
+        nombre: "Culotteles",
         descripcion: "Transparencias delicadas con ajuste perfecto y confort total.",
         precio: 3500,
         talles: ["M/L"],
@@ -252,7 +251,7 @@ const productos = [
         categoria: "mujer",
         nombre: "Reductores",
         descripcion: "Transparencias delicadas con ajuste perfecto y confort total.",
-        precio: 7000,
+        precio: 7500,
         talles: ["110", "115"],
         imagen: "imagenes/mujeres/reductores.jpeg",
         
@@ -272,7 +271,7 @@ const productos = [
         categoria: "mujer",
         nombre: "Top deportivo con cierre",
         descripcion: "Transparencias delicadas con ajuste perfecto y confort total.",
-        precio: 7500,
+        precio: 7600,
         talles: ["S/M"],
         imagen: "imagenes/mujeres/top-deportivo-cierre.jpeg",
         
@@ -282,8 +281,8 @@ const productos = [
         categoria: "mujer",
         nombre: "Top deportivo entero",
         descripcion: "Transparencias delicadas con ajuste perfecto y confort total.",
-        precio: 7000,
-        talles: ["S/M", "L/XL"],
+        precio: 7300,
+        talles: ["L/XL"],
         imagen: "imagenes/mujeres/top-deportivo.jpeg",
         
     },
@@ -386,7 +385,46 @@ const productos = [
         imagen: "imagenes/hombres/boxer-calvin.jpeg",
         
     },
-    
+    {
+        id: 40,
+        categoria: "mujer",
+        nombre: "Brallet Melífera",
+        descripcion: "Transparencias delicadas con ajuste perfecto y confort total.",
+        precio: 1000,
+        talles: [ "100", "105"],
+        imagen: "imagenes/mujeres/Brallet-Melífera.jpeg",
+        
+    },
+    {
+        id: 41,
+        categoria: "mujer",
+        nombre: "Conjunto armado Morley",
+        descripcion: "Transparencias delicadas con ajuste perfecto y confort total.",
+        precio: 1300,
+        talles: [ "90", "100", "105"],
+        imagen: "imagenes/mujeres/Conjunto-armado-morley.jpeg",
+        
+    },
+    {
+        id: 42,
+        categoria: "mujer",
+        nombre: "Reductores",
+        descripcion: "Transparencias delicadas con ajuste perfecto y confort total.",
+        precio: 1300,
+        talles: [ "90", "95", "100"],
+        imagen: "imagenes/mujeres/reductores-2.jpeg",
+        
+    },
+    {
+        id: 43,
+        categoria: "mujer",
+        nombre: "Corpiño armado especial",
+        descripcion: "Transparencias delicadas con ajuste perfecto y confort total.",
+        precio: 8000,
+        talles: [ "110", "115", "120"],
+        imagen: "imagenes/mujeres/corpiño-especiales.jpeg",
+        
+    },
 
 ];
 
